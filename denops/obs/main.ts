@@ -21,5 +21,12 @@ export const main: Entrypoint = (denops) => {
     identified: (): unknown => {
       return obs?.identified;
     },
+    call: async (
+      requestType: unknown,
+      requestData?: unknown,
+    ): Promise<unknown> => {
+      // TODO:requestTypesがkeyof OBSRequestTypeの型になるようにする
+      return await obs?.call(requestType, requestData);
+    },
   };
 };
